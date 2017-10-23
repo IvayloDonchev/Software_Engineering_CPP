@@ -5,9 +5,10 @@ using namespace std;
 
 int main()
 {
-	int mas[10]{ 1,2,3,4,5 };
+	int mas[]{ 1,2,3,4,5 };
+	size_t n{ sizeof(mas) / sizeof(mas[0]) };
 	
-	for (size_t i = 0; i < sizeof(mas)/sizeof(mas[0]); i++)
+	for (size_t i = 0; i < n; i++)
 		cout << mas[i] << " ";
 	cout << endl;
 	
@@ -20,6 +21,10 @@ int main()
 	cout << endl;
 
 	for_each(begin(mas), end(mas), [](auto x) {
+		cout << x << " "; });
+	cout << endl;
+
+	for_each(mas, mas+n, [](auto x) {
 		cout << x << " "; });
 	cout << endl;
 
