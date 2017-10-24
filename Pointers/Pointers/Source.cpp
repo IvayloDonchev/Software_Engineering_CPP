@@ -38,11 +38,9 @@ int main()
 	
 	double *dp = reinterpret_cast<double*>(&n);
 	cout << *(int*)dp << endl;
-
-
+	
 	auto Length = [](int m[])->size_t {
 		return sizeof(m)/sizeof(m[0]); };
-
 
 	cout << Length(mas) << endl;  // винаги е 1
 	system("pause");
