@@ -16,14 +16,15 @@ int main()
 	p[4] = 7;
 	p[6] = 10;
 	p[-3] = 15;*/
-
-	//double *p{ new double(2.5) };
-	//cout << p << ", " << *p << endl;
-	//delete p;
-	//cout << p << endl;
-	//cout << *p << endl;	//null pointer dereferencing
-
-	void* vp;
+//--------------------------------------------------------------------------
+	/*double *p{ new double(2.5) };
+	cout << p << ", " << *p << endl;
+	delete p;
+	cout << p << endl;
+	cout << *p << endl;	//null pointer dereferencing*/
+//--------------------------------------------------------------------------
+	//използване на void* за достъп до различни типове обекти
+/*	void* vp;
 	vp = new double;
 	cout << "Enter double: ";
 	cin >> *static_cast<double*>(vp);
@@ -43,5 +44,66 @@ int main()
 	cout << endl;
 	delete [] (int*)vp;
 
+	vp = new MyClass[10];
+	//delete (MyClass*) vp;	// ще освободи паметта само за първия обект (и може да забие)
+	delete[](MyClass*) vp;	// коректно - ще освободи паметта за 10 обекта
+	MyClass* mp = new MyClass[5]; // същото чрез указател към класа
+	cout << "--------------- MyClass pointer ---------------\n";
+	delete[] mp;
+	*/
+//-----------------------------------------------------------------------
+/*	// Псевдоними
+	int x = 10, y = 100;
+	int &rx = x;
+	cout << "x =  " << x << endl;
+	x = 30;
+	cout << "rx = " << rx << endl;
+	//адресите на двете променливи съвпадат
+	cout << "&rx = " << &rx << endl;
+	cout << "&x  = " << &x << endl;
+
+	//rx = &y;	// грешка - псведоним не може да се свърже с друга променлива
+	//int &ry;    // грешка - псевдонимът не е инициализиран
+	//reinterpret_cast<int*>(&rx) = &y; // преди можеше така
+	const int& cr = 25;	//псевдоним на числов литерал
+	//cr = 30;	// грешка (псевдонимът е константен)
+	const_cast<int&>(cr) = 30;  // така става, но има по-елегантен начин
+	cout << "cr = " << cr << endl;
+
+	//десни псевдоними
+	int && rr = 20;	//десен псевдоним на числовия литерал;
+	cout << "rr = " << rr << endl;
+	cout << "&rr = " << &rr << endl;
+	rr = 30;
+	cout << "rr = " << rr << endl;
+	cout << "&rr = " << &rr << endl; //на същото място, където преди това беше литералът 20
+	*/
+//.................................................................................
+/*	//Пример: Динамичен масив с реалокация
+	int *p{ new int[5] };
+	int *q{ nullptr };
+	int x{ 0 }, n{ 0 }, m{ 0 };
+	//въвеждане на числа, докато се въведе 0
+	cout << ">> "; cin >> x;
+	while (x != 0)
+	{
+		if (m <= 5)
+		{
+			m = 0;
+			q = new int[n + 5];
+			memmove(q, p, n * sizeof(int));
+			delete[] p;
+			p = q;
+		}
+		p[n++] = x;
+		++m;
+		cout << ">> "; cin >> x;
+	}
+	//извеждане на числата
+	for (int i = 0; i < n; i++)
+		cout << p[i] << ' ';
+	cout << endl;
+	delete[] p;
+	*/
 	system("pause");
 }
