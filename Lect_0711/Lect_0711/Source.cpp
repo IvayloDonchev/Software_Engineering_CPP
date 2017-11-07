@@ -1,5 +1,6 @@
 #include <iostream>
 #include <exception>
+#include <ctime>
 using namespace std;
 
 class MyClass {
@@ -105,5 +106,43 @@ int main()
 	cout << endl;
 	delete[] p;
 	*/
+//----------------------------------------------------------------------------
+/*	//двумерен масив чрез двоен указател
+	int m, n;
+	int **matr;
+	cout << "rows: "; cin >> m;
+	cout << "columns: "; cin >> n;
+	//Заделяна на памет
+	matr = new int*[m];
+	for (int i = 0; i < m; i++)
+		matr[i] = new int[n];
+	//Запълване със случайни числа
+	srand((unsigned)time(0));
+	for (int i = 0; i < m; i++)
+		for (int j = 0; j < n; j++)
+			matr[i][j] = rand() % 10;
+	//Извеждане във вид на матрица
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+			cout << matr[i][j] << '\t';
+		cout << endl;
+	}
+	cout << endl;
+	//елементите не са разположени последователно в паметта
+	int *p = reinterpret_cast<int*>(matr[0]);
+	for (int i = 0; i < m*n; i++)
+		cout << p[i] << ' ';
+	cout << endl;
+	for (int i = 0; i < m - 1; i++)
+		cout << "matr[" << i + 1 << "] - matr[" << i << "] = "
+		<< (matr[i + 1] - matr[i]) << endl;
+	cout << "(must be " << n * sizeof(int) << ")\n";
+	//Освобождаване на паметта
+	for (int i = 0; i < m; i++)
+		delete [] matr[i];
+	delete [] matr;
+	*/
+
 	system("pause");
 }
