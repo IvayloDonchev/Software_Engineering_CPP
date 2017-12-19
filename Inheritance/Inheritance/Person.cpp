@@ -30,6 +30,7 @@ Person::~Person()
 
 Person & Person::operator=(const Person &other)
 {
+	if (this == &other) return *this;	// self assignment
 	size_t len = strlen(other.name) + 1;
 	if (name) delete[] name;
 	name = new char[len];
@@ -54,6 +55,7 @@ Person::Person(Person &&other):
 
 Person & Person::operator=(Person &&other)
 {
+	if (this == &other) return *this;
 	if (name) delete[] name;
 	if (address) delete[] address;
 	name = std::move(other.name);
