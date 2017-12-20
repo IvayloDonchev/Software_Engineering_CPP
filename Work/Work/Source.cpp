@@ -4,6 +4,12 @@
 #include <ctime>
 using namespace std;
 
+
+int digit()
+{
+	return rand() % 10;
+}
+
 int main()
 {
 	//const int n = 10; //брой на оценките
@@ -133,7 +139,14 @@ for (int i = 0; i < 5; i++)
 cout << endl;
 delete[](double*)vp;
 
-
+srand((unsigned)time(0));
+for (int j = 1; j <= 10; j++)
+{
+	if (int i = digit() > 4)
+	{
+		cout << i << endl;
+	}
+}
 
 
 
