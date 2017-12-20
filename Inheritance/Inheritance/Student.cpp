@@ -28,7 +28,7 @@ Student::~Student()
 std::ostream& operator << (std::ostream& out, const Student& s)
 {
 	out << static_cast<Person>(s) << std::endl;
-	out << "Faculty number: " << std::endl;
+	out << "Faculty number: " << s.fak_num << std::endl;
 	out << "Program: " << s.program << std::endl;
 	out << "Semester: " << s.semester << std::endl;
 	return out;

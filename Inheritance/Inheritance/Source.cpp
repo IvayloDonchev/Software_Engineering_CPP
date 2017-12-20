@@ -11,6 +11,7 @@ int main()
 	cout << "p2: " << p2 << endl;
 	Person p3;				// default constructor
 	p3 = p1;				// copy assignment
+	cout << "p3: " << p3 << endl;
 	Person p4{ move(p1) };  // move constructor
 	cout << "p4: " << p4 << endl;
 	//cout << "p1: " << p1 << endl;  //error! p1 is deleted
