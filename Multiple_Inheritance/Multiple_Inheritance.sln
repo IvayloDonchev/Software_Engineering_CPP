@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multiple_Inheritance", "Multiple_Inheritance\Multiple_Inheritance.vcxproj", "{A0231EEF-77F3-4E81-81BB-C5067056D6E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Debug|x64.ActiveCfg = Debug|x64
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Debug|x64.Build.0 = Debug|x64
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Debug|x86.ActiveCfg = Debug|Win32
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Debug|x86.Build.0 = Debug|Win32
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Release|x64.ActiveCfg = Release|x64
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Release|x64.Build.0 = Release|x64
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Release|x86.ActiveCfg = Release|Win32
+		{A0231EEF-77F3-4E81-81BB-C5067056D6E5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86BD349E-18AF-43B3-855F-0B539FF1A27B}
+	EndGlobalSection
+EndGlobal
