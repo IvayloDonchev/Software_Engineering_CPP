@@ -70,7 +70,7 @@ public:
 		Human(i, n, a), wage(w), hours(h)
 	{}
 	bool operator <(const Worker& other) {
-		return calculateHourlyWadge() > other.calculateHourlyWadge();
+		return calculateHourlyWadge() > other.calculateHourlyWadge();   // !!
 	}
 	friend istream& operator >>(istream& i, Worker& w)
 	{

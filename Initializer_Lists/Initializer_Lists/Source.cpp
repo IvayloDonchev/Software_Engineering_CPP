@@ -26,6 +26,7 @@ public:
 int main() {
 	Container List{ 1, 3, 5, 6, 3, 2, 3 };
 	cout << List << endl;
+	Container l2{ 1,2,3 };
 
 	system("pause");
 }
