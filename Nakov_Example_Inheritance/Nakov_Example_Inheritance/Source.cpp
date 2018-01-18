@@ -1,16 +1,17 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
+#include <algorithm>	//sort()
+#include <functional>	//greater<>
 using namespace std;
 
 class Human {
 private:
-	int id;
+	unsigned long id;
 	string name;
 	string address;
 public:
 	Human() = default;
-	Human(int i, string n, string a) :
+	Human(unsigned long i, string n, string a) :
 		id(i), name(n), address(a)
 	{}
 	friend ostream& operator <<(ostream& out, const Human& h)
@@ -34,10 +35,10 @@ private:
 	double mark;
 public:
 	Student() = default;
-	Student(int i, string n, string a, double m) : Human(i, n, a),
-		mark(m)
+	Student(unsigned long i, string n, string a, double m) : 
+		Human(i, n, a),	mark(m)
 	{}
-	bool operator <(const Student& other)
+	bool operator <(const Student& other) const
 	{
 		return mark < other.mark;
 	}
@@ -66,10 +67,13 @@ public:
 	constexpr double calculateHourlyWadge() const {
 		return wage * hours;
 	}
-	Worker(int i, string n, string a, double w, int h) :
+	Worker(unsigned long i, string n, string a, double w, int h) :
 		Human(i, n, a), wage(w), hours(h)
 	{}
-	bool operator <(const Worker& other) {
+	bool operator <(const Worker& other) const {
+		return calculateHourlyWadge() < other.calculateHourlyWadge();
+	}
+	bool operator >(const Worker& other) const {
 		return calculateHourlyWadge() > other.calculateHourlyWadge();
 	}
 	friend istream& operator >>(istream& i, Worker& w)
@@ -102,7 +106,7 @@ int main() {
 	Worker workers[N];
 	for (auto& w : workers)
 		cin >> w;
-	sort(begin(workers), end(workers));
+	sort(begin(workers), end(workers), greater<Worker>());
 	for (auto w : workers)
 		cout << w << "-------------\n";
 	cout << endl;
