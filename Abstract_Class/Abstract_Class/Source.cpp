@@ -3,19 +3,19 @@ using namespace std;
 
 class Pet {		//абстрактен клас
 public:
-	virtual void sound() = 0; //чист виртуален метод
+	virtual void sound() const = 0; //чист виртуален метод
 };
 
 class Dog : public Pet {
 public:
-	void sound() override {
+	void sound() const override {
 		cout << "bowwow!\n";
 	}
 };
 
 class Cat : public Pet {
 public:
-	void sound() override {
+	void sound() const override {
 		cout << "miaou!\n";
 	}
 };
